@@ -2,8 +2,13 @@
     margin: auto;
 }
 
-.searchbutton {
+.active.searchbutton {
     background-color: #a02236;
+}
+
+.jumbotron {
+    background: #ffffff;
+    text-align: center;
 }
 
 .row {
@@ -14,8 +19,21 @@
     height: 12em;
 }
 
+.searchbutton {
+    background-color: #a02236;
+}
+
 .form-control {
     size = 2em;
 }
 
+.enrollchart {
+    height: 500px;
+    width: 900px;
+    margin: auto;
+}
+
+table {
+    margin-top: 1.5em;
+}
 

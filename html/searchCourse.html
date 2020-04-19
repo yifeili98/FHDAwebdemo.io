@@ -66,7 +66,7 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label for="year">Year</label>
-                      <input type="number" class="form-control" id="searchYear">
+                      <input type="number" class="form-control" id="searchYear" placeholder="Example: 2019">
                     </div>
                     <div class="form-group col-md-4">
                       <label for="quarter">Quarter</label>
@@ -89,11 +89,24 @@
                           <option>More In Progress</option>
                         </select>
                   </div>
+                  <div class="form-row">
+                    <div class="form-group col-4">
+                      <label for="searchoption">Search Option</label>
+                        <select class="form-control" id="searchOption">
+                          <option>Is Exactly</option>
+                          <option>Contains</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-8">
+                      <label for="coursenumber">Course Number</label>
+                      <input type="text" class="form-control" id="searchCourseNumber" placeholder="Example: D035A">
+                    </div>
+                  </div>
                   <div class="form-group">
                     <label for="crn">CRN (Optional)</label>
                     <input type="text" class="form-control" id="searchCrn" placeholder="Example: 43046">
                   </div>
-                  <button type="submit" class="btn btn-primary searchbutton">Search</button>
+                  <a href="exampleCourseSearch.html" class="btn btn-primary searchbutton">Search (Try me)</a>
                 </form>
             </div> 
         </div>
