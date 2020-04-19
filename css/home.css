@@ -1,0 +1,19 @@
+.jumbotron {
+    background: #ffffff;
+}
+
+[class*="col-"] {
+    margin: auto;
+}
+
+.searchbutton {
+    background-color: #a02236;
+}
+
+.row {
+    padding: 2em;
+}
+
+.blanksection {
+    height: 12em;
+}

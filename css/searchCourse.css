@@ -1,0 +1,25 @@
+[class*="col-"] {
+    margin: auto;
+}
+
+.searchbutton {
+    background-color: #a02236;
+}
+
+.row {
+    padding: 2em;
+}
+
+.blanksection {
+    height: 12em;
+}
+
+.form-control {
+    size = 2em;
+}
+
+.row.searchformcol {
+    padding-right: 50em;
+}
+
+
