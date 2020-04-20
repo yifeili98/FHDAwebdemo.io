@@ -12,45 +12,7 @@
     <link rel="stylesheet" href="../css/searchCourse.css">
     
     <!-- Start Example Graph -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Fetch Time', 'Active', 'WL_Active'],
-          ['2010-07-20 10:30',  22,      0],
-          ['2010-07-20 18:30',  33,      0],
-          ['2010-07-21 10:30',  40,       1],
-          ['2010-07-21 18:30',  40,      9],
-          ['2010-07-22 10:30 (Not Fetched)', NaN, NaN],
-          ['2010-07-22 18:30 (Not Fetched)', NaN, NaN]
-        ]);
-
-        var options = {
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
-    
-      function resizeCharts () {
-        // redraw charts, dashboards, etc here  
-        drawChart();
-      }
-      if (window.addEventListener) {
-        window.addEventListener('resize', resizeCharts);
-      }
-      else if (window.attachEvent) {
-        window.attachEvent('onresize', resizeCharts);
-      }
-      else {
-        window.onresize = resizeCharts;
-      }
-    </script>
+    <script src="../apache-echarts-4.7.0/dist/echarts.js"></script>
     <!-- End Example Graph -->
       
     <title>Search Result</title>
@@ -128,8 +90,57 @@
           </div>
         </div>
         <div><h1 class="display-8" style="text-align: center">Enrollment</h1></div>
-        <div id="curve_chart" class="enrollchart"></div>
+        <div id="enrollchart" style="width: 600px;height:400px;"></div>
     </div>
+      
+    <script type="text/javascript">
+      var myChart = echarts.init(document.getElementById('enrollchart'));
+
+        // specify chart configuration item and data
+        option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['Active', 'WL_Active']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: 'Active',
+                    type: 'line',
+                    step: 'start',
+                    data: [22, 33, 40, 40]
+                },
+                {
+                    name: 'WL_Active',
+                    type: 'line',
+                    step: 'middle',
+                    data: [0, 0, 1, 9]
+                }
+            ]
+        };
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
